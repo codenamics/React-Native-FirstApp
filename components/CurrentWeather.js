@@ -5,7 +5,6 @@ import {
   ActivityIndicator,
   StyleSheet,
   Image,
-  Button,
   TouchableOpacity
 } from "react-native";
 import wind from "../assets/wind.png";
@@ -27,18 +26,16 @@ export default class CurrenteWeather extends Component {
       .get(
         `http://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=4e2b39896dcc3622534cc498191bdc35`
       )
-      .then(
-        res =>
-          this.setState({
-            data: res.data,
-            isLoading: false
-          })
-        // console.log(res.data)
+      .then(res =>
+        this.setState({
+          data: res.data,
+          isLoading: false
+        })
       )
       .catch(err => console.log(err));
   }
   async removeItemValue() {
-    AsyncStorage.removeItem("myKey").then(log => console.log("log"));
+    AsyncStorage.removeItem("myKey");
   }
   render() {
     const { data } = this.state;

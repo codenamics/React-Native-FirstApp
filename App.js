@@ -26,7 +26,6 @@ export default class App extends Component {
     AsyncStorage.getItem("myKey")
       .then(value => {
         this.setState({ myKey: value });
-        console.log(value);
       })
       .done();
   };

@@ -18,7 +18,6 @@ export class SetLocation extends Component {
     this.setState({
       myKey: value
     });
-    console.log(value);
   };
   setAsyncStorage = () => {
     AsyncStorage.setItem("myKey", this.state.myKey);
